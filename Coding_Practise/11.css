@@ -1,15 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
 
-.heading {
+.profile-container {
+  color: white;
+  background-color: #b990ff;
+  height: 100vh;
+}
+
+.profile-img{
+    width:200px;
+}
+
+.profile-name{
     font-family: "Roboto";
-    text-align: center;
+    font-size:22px;
+    font-weight: 800;
+    margin-top: 20px;
 }
 
-.cart-items-heading {
-    text-align: center;
-    font-size: 28px;
+.age{
+    font-family: "Roboto";
+    font-size:20px;
+    font-weight: 600;
 }
 
-.cart-items-container {
-    text-align: center;
-}

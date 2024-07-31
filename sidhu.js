@@ -1,40 +1,12 @@
-let aboutButtonEl = document.getElementById("aboutButton");
-let timeToVisitButtonEl = document.getElementById("timeToVisitButton");
-let attractionButtonEl = document.getElementById("attractionsButton");
+let cartItemTextInputEl = document.getElementById("cartItemTextInput");
+let cartItemsContainerEl = document.getElementById("cartItemsContainer");
 
-let aboutTabEl = document.getElementById("aboutTab");
-let timeToVisitTabEl = document.getElementById("timeToVisitTab");
-let attractionTabEl = document.getElementById("attractionsTab");
+function onAddCartItem() {
+  let cartItemText = cartItemTextInputEl.value;
 
-timeToVisitTabEl.classList.add("d-none");
-attractionTabEl.classList.add("d-none");
+  let cartItemEl = document.createElement("li");
+  cartItemEl.textContent = cartItemText;
 
-function onClickAboutTab() {
-  aboutTabEl.classList.remove("d-none");
-  timeToVisitTabEl.classList.add("d-none");
-  attractionTabEl.classList.add("d-none");
-
-  aboutButtonEl.classList.add("selecetd-button");
-  timeToVisitButtonEl.classList.remove("selection-button");
-  attractionButtonEl.classList.remove("selection-button");
-}
-
-function onClickTimeToVisitTab() {
-  aboutTabEl.classList.add("d-none");
-  timeToVisitTabEl.classList.remove("d-none");
-  attractionTabEl.classList.add("d-none");
-
-  aboutButtonEl.classList.remove("selecetd-button");
-  timeToVisitButtonEl.classList.add("selection-button");
-  attractionButtonEl.classList.add("selection-button");
-}
-
-function onClickAttractionsTab() {
-  aboutTabEl.classList.add("d-none");
-  timeToVisitTabEl.classList.add("d-none");
-  attractionTabEl.classList.remove("d-none");
-
-  aboutButtonEl.classList.remove("selecetd-button");
-  timeToVisitButtonEl.classList.remove("selection-button");
-  attractionButtonEl.classList.add("selection-button");
+  cartItemTextInputEl.value = "";
+  cartItemsContainerEl.appendChild(cartItemEl);
 }
