@@ -1,5 +1,4 @@
 import java.util.*;
-
 class test {
     public static int numberOfSubstrings(String s) {
         int n = s.length();
