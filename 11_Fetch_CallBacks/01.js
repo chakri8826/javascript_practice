@@ -9,4 +9,3 @@ fetch(url, options)
   .then(function(jsonData) {
     console.log(jsonData);
   });
- 

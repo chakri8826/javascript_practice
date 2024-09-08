@@ -1,9 +1,9 @@
-let data = {
-  name: "post",
-  email: "post@email.com",
-  gender: "male",
-  status: "Active",
-};
+  let data = {
+    name: "la",
+    email: "laaaa@email.com",
+    gender: "male",
+    status: "Active"
+  };
 
 let options = {
   method: "POST",
@@ -11,7 +11,7 @@ let options = {
     "Content-Type": "application/json",
     Accept: "application/json",
     Authorization:
-      "Bearer 9d20ff9759f039091f01b85856553d3da51cd6733e491120aa9c1780ceb3104e",
+      "Bearer 6047f56ab4402686d0bb975ccdb6c028c392d63623729e1306a492e15d849d85",
   },
   body: JSON.stringify(data),
 };
@@ -26,3 +26,7 @@ fetch(url, options)
   .catch(function (error) {
     console.error("Error:", error);
   });
+
+
+
+

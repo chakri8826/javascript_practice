@@ -3,9 +3,9 @@ let options = {
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
-    Authorization:"Bearer 9d20ff9759f039091f01b85856553d3da51cd6733e491120aa9c1780ceb3104e",
+    Authorization:
+      "Bearer 6047f56ab4402686d0bb975ccdb6c028c392d63623729e1306a492e15d849d85",
   },
-
 };
 let url = "https://gorest.co.in/public-api/users/7372868";
 fetch(url,options)

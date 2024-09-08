@@ -51,6 +51,19 @@ class test {
    
     public static void main(String[] args) {
         // int res= numberOfSubstrings("00011");
+        String s ="ab";
+        int res[] = new int[2];
+        int sum=0;
+        for(int i=0;i<2;i++){
+            sum+=s.charAt(i)-'a';   
+        }
+        // System.out.println(res[0]);
+        // System.out.println(res[1]);
+        // System.out.println(sum);
+        char r = (char)('a'+sum); 
+        System.out.println(r);
+
+
 
     }
 }

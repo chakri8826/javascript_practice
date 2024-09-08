@@ -1,12 +1,24 @@
-let cartItemTextInputEl = document.getElementById("cartItemTextInput");
-let cartItemsContainerEl = document.getElementById("cartItemsContainer");
+let jokeTextEl = document.getElementById("jokeText");
+let spinnerEl = document.getElementById("spinner");
+let jokeBtnEl = document.getElementById("jokeBtn");
 
-function onAddCartItem() {
-  let cartItemText = cartItemTextInputEl.value;
+let options = {
+  method: "GET",
+};
 
-  let cartItemEl = document.createElement("li");
-  cartItemEl.textContent = cartItemText;
-
-  cartItemTextInputEl.value = "";
-  cartItemsContainerEl.appendChild(cartItemEl);
+function getRandomJoke() {
+  spinnerEl.classList.remove("d-none");
+  jokeTextEl.classList.add("d-none");
+  fetch("https://apis.ccbp.in/jokes/random", options)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (jsonData) {
+      let randomJoke = jsonData.value;
+      spinnerEl.classList.add("d-none");
+      jokeTextEl.classList.remove("d-none");
+      jokeTextEl.textContent = randomJoke;
+    });
 }
+
+jokeBtnEl.addEventListener("click", getRandomJoke);
