@@ -25,13 +25,9 @@ function getFact(event){
                 factEl.textContent=jsonData.fact;
             })
             
-
         }
     }
 }
-
-
-
 userInputEl.addEventListener("keydown",getFact);
 
- 
+

@@ -9,17 +9,17 @@ workingStatusEl.addEventListener("change",function(event){
     formData.status=event.target.value;
 });
 
+
 let gmaleEl = document.getElementById("gmale");
 gmaleEl.addEventListener("change",function(event){
     formData.gender = event.target.value;
-    
 });
+
 
 let femaleEl = document.getElementById("gfemale");
-femaleEl.addEventListener("change", function (event) {
+femaleEl.addEventListener("change", function (event){
     formData.gender = event.target.value;
 });
-
 
 
 let nameEl = document.getElementById("name");
@@ -33,7 +33,6 @@ nameEl.addEventListener("change",function(event){
         nameErrMsgEl.textContent = "";
     }
     formData.name=event.target.value;
-
 });
 
 
@@ -90,5 +89,32 @@ myFormEl.addEventListener("submit", function (event) {
     validateFormData(formData);
     submitFormData(formData);
 }); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -1,0 +1,19 @@
+.bg-container{
+    background-color:#d5e5ff;
+}
+.form-cont{
+    background-color: #ffffff;
+}
+.label{
+    color:#7b8794;
+    font-weight: bold;
+    font-size:12;
+}
+.errorMessage {
+  font-family: "Roboto";
+  font-size: 14px;
+  color: #dc3545;
+}
+
+
+
