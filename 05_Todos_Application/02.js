@@ -10,8 +10,8 @@ let todolist = [
 
     },
 ];
+let todoItemsContainer = document.getElementById("todoItemsContainer");
 function createAndAppendTodo(todo){
-
     let todoElement = document.createElement("li");
     todoElement.classList.add("todo-item-container", "d-flex", "flex-row");
     todoItemsContainer.appendChild(todoElement);

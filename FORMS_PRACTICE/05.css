@@ -1,0 +1,27 @@
+.cont{
+    background-color:#f97576;
+}
+.heading {
+    color: #ffffff;
+    font-family: "Roboto";
+    font-size: 36px;
+    font-weight: 700;
+}
+.card-cont{
+    border-radius: 20px;
+    background-color: #ffffff;
+
+}
+.question {
+    color: #2d3a35;
+    font-family: "Bree Serif";
+    font-size: 24px;
+}
+.option-label{
+    color: #2d3a35;
+    font-family: "Roboto";
+}
+.result-msg {
+    font-family: "Bree Serif";
+    font-size: 18px;
+}

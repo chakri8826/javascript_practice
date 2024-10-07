@@ -102,3 +102,4 @@ function onAddTodo() {
 for (let todo of todoList) {
   createAndAppendTodo(todo);
 }
+
