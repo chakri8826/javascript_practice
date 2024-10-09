@@ -8,7 +8,29 @@
   </head>
   <link rel="stylesheet" href="09.css">
   <body>
-    
+      <div class="bg-cont p-4" id="speedTypingTest">
+        <h1 class="main-heading">Speed Typing Test</h1>
+        <p class="main-para">On your fingers lets set Go!</p>
+        <div class="text-center">
+            <div id="spinner" class="d-none spinner-border" role="status">
+                <span class="visually-hidden"></span>
+            </div>
+        </div>
+        <div class="mt-5 d-flex flex-row">
+          <img id="image" src="https://assets.ccbp.in/frontend/dynamic-webapps/clock-img.png" class="image"/>
+          <p id="timer" class="timer-display"></p>
+          <span id="span" class="timer-span">seconds</span>
+        </div>
+          <div class="inner-cont">
+            <p id="quoteDisplay" class="quote-para"></p>
+            <textarea placeholder="Type here!" id="quoteInput" class="quote-textarea"></textarea>
+
+          </div>
+            <p id="result"></p>
+            <button id="submitBtn" class="submit-button">Submit</button>
+            <button id="resetBtn" class="reset-button">Reset</button>
+      </div>
     <script src="09.js" defer></script>
   </body>
 </html>
+

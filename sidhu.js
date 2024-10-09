@@ -1,73 +1,60 @@
-let quoteDispalyEl = document.getElementById("quoteDisplay");
-let url = "https://apis.ccbp.in/random-quote";
-let options = {
-  method: "GET",
-};
-fetch(url, options)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (jsonData) {
-    quoteDispalyEl.textContent = jsonData.content;
-  });
+let searchInputEl = document.getElementById("searchInput");
 let spinnerEl = document.getElementById("spinner");
-spinnerEl.classList.remove("d-none");
-let imageEl = document.getElementById("image");
-imageEl.classList.add("d-none");
-let spanEl = document.getElementById("span");
-spanEl.classList.add("d-none");
+let searchResultsEl = document.getElementById("searchResults");
 
-let timerEl = document.getElementById("timer");
-let timerParaEl = document.createElement("p");
-timerParaEl.classList.add("timer-para");
-timerEl.appendChild(timerParaEl);
-let count = 1;
-let uniqueNo1 = setInterval(function () {
-  spanEl.classList.remove("d-none");
-  imageEl.classList.remove("d-none");
-  spinnerEl.classList.add("d-none");
-  timerEl.textContent = count;
-  count += 1;
-}, 1000);
+function appendBooks(result) {
+  let imgUrl = result.imageLink;
+  let authorName = result.author;
 
-let quoteInputEl = document.getElementById("quoteInput");
-let submitBtnEl = document.getElementById("submitBtn");
-let resultEl = document.getElementById("result");
-submitBtnEl.addEventListener("click", function () {
-  if (
-    quoteInputEl.value === "" ||
-    quoteInputEl.value !== quoteDispalyEl.textContent
-  ) {
-    resultEl.textContent = "You typed incorrect sentence";
+  let imageEl = document.createElement("img");
+  imageEl.src = imgUrl;
+  searchResultsEl.appendChild(imageEl);
+
+  let authorEl = document.createElement("p");
+  authorEl.classList.add("authorPara");
+  authorEl.textContent = authorName;
+  searchResultsEl.appendChild(authorEl);
+}
+
+function displayHttpRequestResults(search_results) {
+  searchInputEl.value = "";
+  let headingEl = document.createElement("h1");
+  headingEl.classList.add("errorHeading");
+  searchResultsEl.appendChild(headingEl);
+
+  let headingE2 = document.createElement("h1");
+  headingE2.classList.add("popularBooks");
+  searchResultsEl.appendChild(headingE2);
+  if (search_results && search_results.length === 0) {
+    spinnerEl.classList.add("d-none");
+    headingEl.textContent = "No result found";
+  } else if (search_results) {
+    spinnerEl.classList.remove("d-none");
+    headingE2.textContent = "Popular Books";
+    for (let result of search_results) {
+      appendBooks(result);
+    }
   } else {
-    count = count - 1;
-    clearInterval(uniqueNo1);
-    resultEl.textContent = "You typed in " + count;
+    spinnerEl.classList.add("d-none");
+    headingEl.textContent = "Error: Invalid response from server";
+  }
+}
+
+searchInputEl.addEventListener("keydown", function (event) {
+  let searchInputValue = event.target.value;
+  searchResultsEl.textContent = "";
+  if (event.key === "Enter") {
+    spinnerEl.classList.remove("d-none");
+    let url = `https://apis.ccbp.in/book-store?title=${searchInputValue}`;
+    let options = {
+      method: "GET",
+    };
+    fetch(url, options)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (jsonData) {
+        displayHttpRequestResults(jsonData.search_results);
+      });
   }
 });
-
-let resetBtnEl = document.getElementById("resetBtn");
-resetBtnEl.addEventListener("click", function () {
-  quoteInputEl.value = "";
-  resultEl.textContent = "";
-  clearInterval(uniqueNo1);
-  count = 0;
-  setInterval(function () {
-    timerEl.textContent = count;
-    count += 1;
-  }, 1000);
-  let url = "https://apis.ccbp.in/random-quote";
-  let options = {
-    method: "GET",
-  };
-  fetch(url, options)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (jsonData) {
-      quoteDispalyEl.textContent = jsonData.content;
-    });
-});
-
-
-

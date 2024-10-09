@@ -8,7 +8,7 @@ function createAndAppendSearchResult(res){
     let {name,flag,population} = res;
 
     let countryCardEl = document.createElement("div");
-    countryCardEl.classList.add("country-card", "d-flex","flex-row","col-11","col-md-5","ml-auto","mr-auto");
+    countryCardEl.classList.add("country-card", "d-flex","flex-row","col-12","col-md-6","col-xl-4","ml-auto","mr-auto");
     resultCountriesCont.appendChild(countryCardEl);
 
 
