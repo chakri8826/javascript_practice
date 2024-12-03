@@ -73,6 +73,7 @@ function createAndAppendTodo(todo) {
   deleteIconContainer.classList.add("delete-icon-container");
   labelContainer.appendChild(deleteIconContainer);
 
+
   let deleteIcon = document.createElement("i");
   deleteIcon.classList.add("far", "fa-trash-alt", "delete-icon");
 
@@ -82,7 +83,7 @@ function createAndAppendTodo(todo) {
   };
   deleteIconContainer.appendChild(deleteIcon);
 }
-
+ 
 function onAddTodo() {
   let todosCount = todoList.length;
   todosCount = todosCount + 1;
